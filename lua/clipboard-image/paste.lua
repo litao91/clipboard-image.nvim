@@ -15,7 +15,7 @@ if package.config:sub(1,1) == '/' then
   else
     -- cmd_check = "osascript -e 'clipboard info' | sed 's/,/\n/g'|sed 's/«class PNGf»/image\\/png/g'"
     cmd_check = "osascript -e 'clipboard info' | sed 's/,/\\n/g' | sed 's/«class PNGf»/image\\/png/g'"
-    cmd_paste = 'pngpaste'
+    cmd_paste = 'pngpaste '
   end
 end
 
