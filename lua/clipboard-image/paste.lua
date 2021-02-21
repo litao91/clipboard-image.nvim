@@ -12,6 +12,10 @@ if package.config:sub(1,1) == '/' then
   elseif os.getenv('XDG_SESSION_TYPE') == 'wayland' then
     cmd_check = 'wl-paste --list-types'
     cmd_paste = 'wl-paste --no-newline --type image/png >'
+  else
+    -- cmd_check = "osascript -e 'clipboard info' | sed 's/,/\n/g'|sed 's/«class PNGf»/image\\/png/g'"
+    cmd_check = "osascript -e 'clipboard info' | sed 's/,/\\n/g' | sed 's/«class PNGf»/image\\/png/g'"
+    cmd_paste = 'pngpaste'
   end
 end
 
