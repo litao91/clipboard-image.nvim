@@ -26,7 +26,7 @@ local clipboard_type = function ()
 
   -- store output to outputs's table
   for output in command:lines() do
-    table.insert(outputs, output)
+    table.insert(outputs, string.match(output, '^%s*(.-)%s*$'))
   end
   return outputs
 end
